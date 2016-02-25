@@ -1,0 +1,52 @@
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+// we're connecting to server
+var socket = io();
+
+socket.on('connect', onConnect);
+
+socket.on('chat', function(data) {
+	console.log(data);
+});
+socket.on('mouse', function(data) {
+	console.log(data);
+	var otherMouse = document.getElementById(data.id);
+	if(!otherMouse) {
+		otherMouse = document.createElement('div');
+		otherMouse.textContent = data.id;
+		otherMouse.style.position = 'fixed';
+		otherMouse.id = data.id;
+		document.body.appendChild(otherMouse);
+	}
+	otherMouse.style.top = data.y + 'px';
+	otherMouse.style.left = data.x + 'px';
+});
+
+function onConnect() {
+	socket.emit('my event', [1, 2, 3]);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	var btn = document.querySelector('#btn')
+	btn.addEventListener('click', function() {
+		console.log(btn);
+		socket.emit('chat', document.querySelector('input').value);
+	});
+
+	document.addEventListener('mousemove', function(evt) {
+		socket.emit('mouse', {x: evt.x, y:evt.y});
+	});
+});
+
+</script>
+<input type="text">
+<button id="btn">send</button>
+<div id="messages">
+</div>
+
+
+
+
+
+

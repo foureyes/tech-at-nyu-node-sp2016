@@ -1,0 +1,29 @@
+<ul>
+{{#each numbers}}
+<li>{{@index}} - {{this}}</li>
+{{/each}}
+</ul>
+
+
+{{obj.a}}
+<ul>
+{{#each obj}}
+<li>{{@key}} - {{this}}</li>
+{{/each}}
+</ul>
+
+
+<ul>
+{{#each nested}}
+<li>{{this}} - {{name}} - {{this.name}}</li>
+{{/each}}
+</ul>
+
+{{#if false}}
+yes
+{{else if false}}
+no
+{{else}}
+maybe:
+{{/if}}
+
