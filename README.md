@@ -7,7 +7,7 @@
 * so you've decided to use node??? can't get enough js in your life? i will tell you about it
 * who? am i really qualified to do this? maybe???
     * on 3rd semester teaching this, but still _rough around the edges!_
-    * rough, javascript / node / frontend dev ecosystem change  all. the time.
+    * javascript / node / frontend dev ecosystem change  all. the time.
 * you 
     * no idea!
     * that's ok, typically my class consists of:
@@ -460,6 +460,7 @@ mongoose.connect('mongodb://localhost/uhoh')
     * req.send();
 * document.querySelector
 * document.querySelectorAll
+
     ```
 document.addEventListener("DOMContentLoaded", function(){
 	var btn = document.getElementById('btn');
@@ -489,7 +490,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	})
 })
     ```
+
 * for a post...
+
     ```
 var request = new XMLHttpRequest();
 request.open('POST', '/create', true);
