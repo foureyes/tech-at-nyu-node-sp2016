@@ -20,7 +20,11 @@
     * http
     * express
     * templating
-    * 
+    * middleware
+    * routes
+    * get and post
+    * with a db
+    * with json and an api
 * the early stuff, like js
 
 
